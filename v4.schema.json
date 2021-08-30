@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "system": {
+      "type": "string"
+    },
+    "network": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "maxPrice": {
+      "type": "integer"
+    },
+    "currentBlockNumber": {
+      "type": "integer"
+    },
+    "msSinceLastBlock": {
+      "type": "integer"
+    },
+    "blockPrices": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "blockNumber": {
+              "type": "integer"
+            },
+            "baseFeePerGas": {
+              "type": "number"
+            },
+            "estimatedTransactionCount": {
+              "type": "integer"
+            },
+            "estimatedPrices": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "confidence": {
+                      "type": "integer"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "maxPriorityFeePerGas": {
+                      "type": "number"
+                    },
+                    "maxFeePerGas": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "confidence",
+                    "price",
+                    "maxPriorityFeePerGas",
+                    "maxFeePerGas"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "confidence": {
+                      "type": "integer"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "maxPriorityFeePerGas": {
+                      "type": "number"
+                    },
+                    "maxFeePerGas": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "confidence",
+                    "price",
+                    "maxPriorityFeePerGas",
+                    "maxFeePerGas"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "confidence": {
+                      "type": "integer"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "maxPriorityFeePerGas": {
+                      "type": "number"
+                    },
+                    "maxFeePerGas": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "confidence",
+                    "price",
+                    "maxPriorityFeePerGas",
+                    "maxFeePerGas"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "confidence": {
+                      "type": "integer"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "maxPriorityFeePerGas": {
+                      "type": "number"
+                    },
+                    "maxFeePerGas": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "confidence",
+                    "price",
+                    "maxPriorityFeePerGas",
+                    "maxFeePerGas"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "confidence": {
+                      "type": "integer"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "maxPriorityFeePerGas": {
+                      "type": "number"
+                    },
+                    "maxFeePerGas": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "confidence",
+                    "price",
+                    "maxPriorityFeePerGas",
+                    "maxFeePerGas"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "blockNumber",
+            "baseFeePerGas",
+            "estimatedTransactionCount",
+            "estimatedPrices"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "system",
+    "network",
+    "unit",
+    "maxPrice",
+    "currentBlockNumber",
+    "msSinceLastBlock",
+    "blockPrices"
+  ]
+}

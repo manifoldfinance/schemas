@@ -1,0 +1,61 @@
+{
+    "Keccak": {
+        "title": "keccak",
+        "type": "string",
+        "description": "Hex representation of a Keccak 256 hash",
+        "pattern": "^0x[a-fA-F\\d]{64}$"
+    },
+    "Nonce": {
+        "title": "nonce",
+        "description": "A number only to be used once",
+        "$ref": "#/components/schemas/Integer"
+    },
+    "Null": {
+        "title": "null",
+        "type": "null",
+        "description": "Null"
+    },
+    "Integer": {
+        "title": "integer",
+        "type": "string",
+        "pattern": "^0x[a-fA-F0-9]+$",
+        "description": "Hex representation of the integer"
+    },
+    "Address": {
+        "title": "address",
+        "type": "string",
+        "pattern": "^0x[a-fA-F\\d]{40}$"
+    },
+    "Addresses": {
+        "title": "addresses",
+        "type": "array",
+        "description": "List of contract addresses from which to monitor events",
+        "items": {
+            "$ref": "#/components/schemas/Address"
+        }
+    },
+    "Position": {
+        "title": "position",
+        "type": "string",
+        "description": "Hex representation of the storage slot where the variable exists",
+        "pattern": "^0x([a-fA-F0-9]?)+$"
+    },
+    "DataWord": {
+        "title": "dataWord",
+        "type": "string",
+        "description": "Hex representation of a 256 bit unit of data",
+        "pattern": "^0x([a-fA-F\\d]{64})?$"
+    },
+    "Byte": {
+        "title": "byte",
+        "type": "string",
+        "description": "Hex representation of a byte",
+        "pattern": "^0x([a-fA-F0-9]?){1,2}$"
+    },
+    "Bytes": {
+        "title": "bytes",
+        "type": "string",
+        "description": "Hex representation of a variable length byte array",
+        "pattern": "^0x([a-fA-F0-9]?)+$"
+    }
+}

@@ -1,0 +1,312 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://txprice.com/schema.json",
+    "type": "object",
+    "title": "Ethereum Transaction Pricing API",
+    "description": "Schema for api.txprice.com",
+    "properties": {
+        "system": {
+            "$id": "#/properties/system",
+            "type": "string",
+            "title": "The system schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "ethereum"
+            ]
+        },
+        "network": {
+            "$id": "#/properties/network",
+            "type": "string",
+            "title": "The network schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "main"
+            ]
+        },
+        "unit": {
+            "$id": "#/properties/unit",
+            "type": "string",
+            "title": "The unit schema",
+            "description": "SI Units, nanoeth (gwei).",
+            "default": "",
+            "examples": [
+                "gwei"
+            ]
+        },
+        "maxPrice": {
+            "$id": "#/properties/maxPrice",
+            "type": "integer",
+            "title": "The maxPrice schema",
+            "description": "Highest priced transaction in the mempool",
+            "default": 0,
+            "examples": [
+                123
+            ]
+        },
+        "currentBlockNumber": {
+            "$id": "#/properties/currentBlockNumber",
+            "type": "integer",
+            "title": "The currentBlockNumber schema",
+            "description": "Block number at the time of prediction",
+            "default": 0,
+            "examples": [
+                13005095
+            ]
+        },
+        "msSinceLastBlock": {
+            "$id": "#/properties/msSinceLastBlock",
+            "type": "integer",
+            "title": "The msSinceLastBlock schema",
+            "description": "Milliseconds since the last block was mined relative to when data was computed",
+            "default": 0,
+            "examples": [
+                3793
+            ]
+        },
+        "blockPrices": {
+            "$id": "#/properties/blockPrices",
+            "type": "array",
+            "title": "The blockPrices schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "blockNumber": 13005096,
+                        "baseFeePerGas": 94.647990462,
+                        "estimatedTransactionCount": 137,
+                        "estimatedPrices": [
+                            {
+                                "confidence": 99,
+                                "price": 104,
+                                "maxPriorityFeePerGas": 9.86,
+                                "maxFeePerGas": 199.16
+                            },
+                            {
+                                "confidence": 95,
+                                "price": 99,
+                                "maxPriorityFeePerGas": 5.06,
+                                "maxFeePerGas": 194.35
+                            },
+                            {
+                                "confidence": 90,
+                                "price": 98,
+                                "maxPriorityFeePerGas": 4.16,
+                                "maxFeePerGas": 193.45
+                            },
+                            {
+                                "confidence": 80,
+                                "price": 97,
+                                "maxPriorityFeePerGas": 2.97,
+                                "maxFeePerGas": 192.27
+                            },
+                            {
+                                "confidence": 70,
+                                "price": 96,
+                                "maxPriorityFeePerGas": 1.74,
+                                "maxFeePerGas": 191.04
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/blockPrices/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/blockPrices/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "The returned object of blockPrices for currentBlockNumber",
+                        "default": {},
+                        "examples": [
+                            {
+                                "blockNumber": 13005096,
+                                "baseFeePerGas": 94.647990462,
+                                "estimatedTransactionCount": 137,
+                                "estimatedPrices": [
+                                    {
+                                        "confidence": 99,
+                                        "price": 104,
+                                        "maxPriorityFeePerGas": 9.86,
+                                        "maxFeePerGas": 199.16
+                                    },
+                                    {
+                                        "confidence": 95,
+                                        "price": 99,
+                                        "maxPriorityFeePerGas": 5.06,
+                                        "maxFeePerGas": 194.35
+                                    },
+                                    {
+                                        "confidence": 90,
+                                        "price": 98,
+                                        "maxPriorityFeePerGas": 4.16,
+                                        "maxFeePerGas": 193.45
+                                    },
+                                    {
+                                        "confidence": 80,
+                                        "price": 97,
+                                        "maxPriorityFeePerGas": 2.97,
+                                        "maxFeePerGas": 192.27
+                                    },
+                                    {
+                                        "confidence": 70,
+                                        "price": 96,
+                                        "maxPriorityFeePerGas": 1.74,
+                                        "maxFeePerGas": 191.04
+                                    }
+                                ]
+                            }
+                        ],
+                        "required": [
+                            "blockNumber",
+                            "baseFeePerGas",
+                            "estimatedTransactionCount",
+                            "estimatedPrices"
+                        ],
+                        "properties": {
+                            "blockNumber": {
+                                "$id": "#/properties/blockPrices/items/anyOf/0/properties/blockNumber",
+                                "type": "integer",
+                                "title": "The blockNumber schema",
+                                "description": "Block this prediction is for.",
+                                "default": 0,
+                                "examples": [
+                                    13005096
+                                ]
+                            },
+                            "baseFeePerGas": {
+                                "$id": "#/properties/blockPrices/items/anyOf/0/properties/baseFeePerGas",
+                                "type": "number",
+                                "title": "The baseFeePerGas schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0.0,
+                                "examples": [
+                                    94.647990462
+                                ]
+                            },
+                            "estimatedTransactionCount": {
+                                "$id": "#/properties/blockPrices/items/anyOf/0/properties/estimatedTransactionCount",
+                                "type": "integer",
+                                "title": "The estimatedTransactionCount schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    137
+                                ]
+                            },
+                            "estimatedPrices": {
+                                "$id": "#/properties/blockPrices/items/anyOf/0/properties/estimatedPrices",
+                                "type": "array",
+                                "title": "The estimatedPrices schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": [],
+                                "examples": [
+                                    [
+                                        {
+                                            "confidence": 99,
+                                            "price": 104,
+                                            "maxPriorityFeePerGas": 9.86,
+                                            "maxFeePerGas": 199.16
+                                        },
+                                        {
+                                            "confidence": 95,
+                                            "price": 99,
+                                            "maxPriorityFeePerGas": 5.06,
+                                            "maxFeePerGas": 194.35
+                                        }
+                                    ]
+                                ],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/blockPrices/items/anyOf/0/properties/estimatedPrices/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/blockPrices/items/anyOf/0/properties/estimatedPrices/items/anyOf/0",
+                                            "type": "object",
+                                            "title": "The first anyOf schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": {},
+                                            "examples": [
+                                                {
+                                                    "confidence": 99,
+                                                    "price": 104,
+                                                    "maxPriorityFeePerGas": 9.86,
+                                                    "maxFeePerGas": 199.16
+                                                }
+                                            ],
+                                            "required": [
+                                                "confidence",
+                                                "price",
+                                                "maxPriorityFeePerGas",
+                                                "maxFeePerGas"
+                                            ],
+                                            "properties": {
+                                                "confidence": {
+                                                    "$id": "#/properties/blockPrices/items/anyOf/0/properties/estimatedPrices/items/anyOf/0/properties/confidence",
+                                                    "type": "integer",
+                                                    "title": "The confidence schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": 0,
+                                                    "examples": [
+                                                        99
+                                                    ]
+                                                },
+                                                "price": {
+                                                    "$id": "#/properties/blockPrices/items/anyOf/0/properties/estimatedPrices/items/anyOf/0/properties/price",
+                                                    "type": "integer",
+                                                    "title": "The price schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": 0,
+                                                    "examples": [
+                                                        104
+                                                    ]
+                                                },
+                                                "maxPriorityFeePerGas": {
+                                                    "$id": "#/properties/blockPrices/items/anyOf/0/properties/estimatedPrices/items/anyOf/0/properties/maxPriorityFeePerGas",
+                                                    "type": "number",
+                                                    "title": "The maxPriorityFeePerGas schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": 0.0,
+                                                    "examples": [
+                                                        9.86
+                                                    ]
+                                                },
+                                                "maxFeePerGas": {
+                                                    "$id": "#/properties/blockPrices/items/anyOf/0/properties/estimatedPrices/items/anyOf/0/properties/maxFeePerGas",
+                                                    "type": "number",
+                                                    "title": "The maxFeePerGas schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": 0.0,
+                                                    "examples": [
+                                                        199.16
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "default": {},
+    "required": [
+        "system",
+        "network",
+        "unit",
+        "maxPrice",
+        "currentBlockNumber",
+        "msSinceLastBlock",
+        "blockPrices"
+    ],
+    "additionalProperties": true
+}
